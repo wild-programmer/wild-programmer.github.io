@@ -1,260 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
-	<style>
-		*{
-			padding: 0;
-			margin: 0;
-			list-style: none;
-		}
-		.box1{
-        	margin: 0 auto;
-        	position: absolute;
-        	margin-top: 20px;
-        	left: 50%;
-        	top: 0;
-        	transform:translateX(-50%);
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
         }
-
-
-		span{
-				font-size:60px;
-				font-weight:700;
-				position:relative;
-				color:red;
-				animation: bianshuai 1.6s linear infinite alternate;
-			}
-			@keyframes bianshuai{	
-				
-				0%{
-					color:blue;
-					text-shadow: 2px 2px 3px yellowgreen;
-					top:0px;
-				}
-				50%{
-					color:red;
-					text-shadow: 2px 2px 3px cyan;
-					top:10px;
-				}
-				100%{
-					color:green;
-					text-shadow: 2px 2px 3px pink;
-					top:0px;
-				}
-			
-			}
-			span:nth-child(1){
-				animation-delay: 0s;
-			}
-			span:nth-child(2){
-				animation-delay: 0.2s;
-			}
-			span:nth-child(3){
-				animation-delay: 0.4s;
-			}
-			span:nth-child(4){
-				animation-delay: 0.6s;
-			}
-			span:nth-child(5){
-				animation-delay: 0.8s;
-			}
-			span:nth-child(6){
-				animation-delay: 1s;
-			}
-			span:nth-child(7){
-				animation-delay: 1.2s;
-			}
-			span:nth-child(8){
-				animation-delay: 1.4s;
-			}
-		.box{
-			width: 560px;
-			height: 380px;
-			margin: 100px auto 0;
-			border: 1px solid #000;
-			display: flex;
-		}
-		ul{
-			flex: 1;
-			position: relative;
-			transform-style: preserve-3d;
-			transition: all 1s;
-		}
-		li{
-			width: 100%;
-			position: absolute;
-			left: 0;
-			top: 0;
-			/*这里面只能给li切 大盒子和UL都不能切*/
-			overflow: hidden;
-		}
-		li:nth-child(1){
-			transform: translateZ(190px);
-		}
-		li:nth-child(2){
-			transform:rotateX(-180deg) translateZ(190px);
-		}
-		li:nth-child(3){
-			transform:rotateX(90deg) translateZ(190px);
-		}
-		li:nth-child(4){
-			transform:rotateX(-90deg) translateZ(190px);
-		}
-		.btn_wrap{
-			width: 560px;
-			height: 1px;
-			margin: 0 auto;
-			position: relative;
-			top: -190px;
-		}
-		.btn{
-			width: 100px;
-			height: 100px;
-			background-color: yellowgreen;
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			text-decoration: none;
-			line-height: 100px;
-			text-align: center;
-			color: #fff;
-			font-size: 18px;
-			font-family: '微软雅黑';
-			border-radius: 5px;
-		}
-		.left_btn{
-			left: -100px;
-		}
-		.right_btn{
-			right: -100px;
-		}
-		ul:nth-child(2) img{
-			margin-left: -140px;
-		}
-		ul:nth-child(3) img{
-			margin-left: -280px;
-		}
-		ul:nth-child(4) img{
-			margin-left: -420px;
-		}
-	
-		/* 布局的思路 ：
+        
+        body {
+            background-color: #847942;
+            animation: bodyback 10s linear 2s infinite alternate;
+        }
+        
+        @keyframes bodyback {
+            0% {
+                background-color: #847942;
+            }
+            90% {
+                background-color: #1d1d1b;
+            }
+            100% {
+                background-color: black;
+            }
+        }
+        
+        .content {
+            position: relative;
+        }
+        
+        .box1 {
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            top: -100px;
+            /*left: 0px;*/
+            transform: translateX(-50%);
+        }
+        
+        .box1 span {
+            font-size: 60px;
+            font-weight: 700;
+            position: relative;
+            color: red;
+            animation: bianshuai 1.6s linear infinite alternate;
+        }
+        
+        .box1 span::after {
+            content: '';
+            width: 20px;
+            height: 5px;
+            position: absolute;
+            right: -9px;
+            bottom: 6px;
+            background-color: rgba(10, 10, 10, .5);
+            border-radius: 40%;
+        }
+        
+        @keyframes bianshuai {
+            0% {
+                color: blue;
+                text-shadow: 2px 2px 3px yellowgreen;
+                top: 0px;
+            }
+            50% {
+                color: red;
+                text-shadow: 2px 2px 3px cyan;
+                top: 10px;
+            }
+            100% {
+                color: green;
+                text-shadow: 2px 2px 3px pink;
+                top: 0px;
+            }
+        }
+        
+        .box1 span:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .box1 span:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .box1 span:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        .box1 span:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+        
+        .box1 span:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+        
+        .box1 span:nth-child(6) {
+            animation-delay: 1s;
+        }
+        
+        .box1 span:nth-child(7) {
+            animation-delay: 1.2s;
+        }
+        
+        .box1 span:nth-child(8) {
+            animation-delay: 1.4s;
+        }
+        
+        .box {
+            width: 560px;
+            height: 380px;
+            margin: 240px auto 0;
+            border: 1px solid #000;
+            display: flex;
+            box-shadow: 17px 10px 20px -7px rgba(10, 10, 10, .7);
+        }
+        
+        .box ul {
+            flex: 1;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+        
+        .box li {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*这里面只能给li切 大盒子和UL都不能切*/
+            overflow: hidden;
+        }
+        
+        .box li:nth-child(1) {
+            transform: translateZ(190px);
+        }
+        
+        .box li:nth-child(2) {
+            transform: rotateX(-180deg) translateZ(190px);
+        }
+        
+        .box li:nth-child(3) {
+            transform: rotateX(90deg) translateZ(190px);
+        }
+        
+        .box li:nth-child(4) {
+            transform: rotateX(-90deg) translateZ(190px);
+        }
+        
+        .btn_wrap {
+            width: 560px;
+            height: 1px;
+            margin: 0 auto;
+            position: relative;
+            top: -190px;
+        }
+        
+        .btn {
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            text-decoration: none;
+            line-height: 100px;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            font-family: '微软雅黑';
+            border-radius: 5px;
+        }
+        
+        .left_btn {
+            left: -100px;
+            box-shadow: 0px 10px 10px -7px rgba(10, 10, 10, .7);
+        }
+        
+        .right_btn {
+            right: -100px;
+            box-shadow: 17px 10px 10px -7px rgba(10, 10, 10, .7);
+        }
+        
+        .box ul:nth-child(2) img {
+            margin-left: -140px;
+        }
+        
+        .box ul:nth-child(3) img {
+            margin-left: -280px;
+        }
+        
+        .box ul:nth-child(4) img {
+            margin-left: -420px;
+        }
+        /* 布局的思路 ：
 
 			利用大盒子的flex伸缩容器 让每一个UL占四分之一的大小 同时让ul里面的图片向左走对应的UI的距离，将所谓的一张图用四个部分軿凑起来
 
 		*/
-
-	</style>
+        
+        .ball {
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            background-color: gold;
+            float: left;
+            position: absolute;
+            top: 55px;
+            left: 60px;
+            box-shadow: 0px 0px 100px 10px gold;
+            overflow: hidden;
+            animation: tiangouback 10s linear 2s infinite alternate;
+        }
+        
+        @keyframes tiangouback {
+            0% {
+                box-shadow: 0px 0px 100px 10px gold;
+            }
+            100% {
+                box-shadow: 0px 0px 0px 0px black;
+            }
+        }
+        
+        .ball::before {
+            content: '';
+            display: block;
+            width: 300px;
+            height: 300px;
+            border-radius: 100%;
+            background-color: black;
+            position: absolute;
+            top: 200px;
+            left: -340px;
+            box-shadow: 0px 0px 20px 10px black;
+            transform: all 1s;
+            animation: tiangou 20s linear 2s infinite;
+        }
+        
+        @keyframes tiangou {
+            0% {
+                top: 200px;
+                left: -340px;
+            }
+            11% {
+                top: 150px;
+                left: -230px;
+            }
+            50% {
+                left: 0px;
+                top: 0px;
+            }
+            100% {
+                top: -200px;
+                left: 340px;
+            }
+        }
+        
+        .luozi {
+            margin-top: 20px;
+            width: 100%;
+            height: 300px;
+            position: relative;
+            left: 0;
+            top: 0;
+            perspective: 3000;
+        }
+        
+        .luozi_img {
+            width: 138px;
+            height: 120px;
+            background: url('./img/luozi.png') no-repeat;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform-origin: 50% 50%;
+            /*transform: rotate(92deg);
+            transform-style: preserve-3d;
+            transform: translateY(20px)*/
+        }
+    </style>
 </head>
+
 <body>
- <div class="box1">
-    	<span>宇</span>
-    	<span>宙</span>
-    	<span>无</span>
-    	<span>敌</span>
-    	<span>帅</span>
-    	<span>气</span>
-    	<span>栋</span>
-    	<span>栋</span>
-    	</div>
-	<div class="box">
-		<ul class="items">
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/01.jpg" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/02.jpg" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/04.jpg" height="380" width="560" alt=""></li>
-		</ul>
-		<ul class="items">
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/01.jpg" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/02.jpg" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/04.jpg" height="380" width="560" alt=""></li>
-		</ul>
-		<ul class="items">
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/01.jpg" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/02.jpg" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/04.jpg" height="380" width="560" alt=""></li>
-		</ul>
-		<ul class="items">
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/01.jpg" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/02.jpg" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
-			<li><img src="https://github.com/wild-programmer/lieping/raw/master/images/04.jpg" height="380" width="560" alt=""></li>
-		</ul>
-	</div>
-	<div class="btn_wrap">
-		<a class="btn left_btn" href="javascript:;">左按钮</a>
-		<a class="btn right_btn" href="javascript:;">右按钮</a>
-	</div>
+    <div class="ball"></div>
+    <div class="content">
+        <div class="box1">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+        </div>
+        <div class="box">
+            <ul class="items">
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/02.jpg" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/04.jpg" height="380" width="560" alt=""></li>
+            </ul>
+            <ul class="items">
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/02.jpg" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/04.jpg" height="380" width="560" alt=""></li>
+            </ul>
+            <ul class="items">
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/02.jpg" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/04.jpg" height="380" width="560" alt=""></li>
+            </ul>
+            <ul class="items">
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/02.jpg" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/03.JPG" height="380" width="560" alt=""></li>
+                <li><img src="https://github.com/wild-programmer/lieping/raw/master/images/04.jpg" height="380" width="560" alt=""></li>
+            </ul>
+        </div>
+        <div class="btn_wrap">
+            <a class="btn left_btn" href="javascript:;">左按钮</a>
+            <a class="btn right_btn" href="javascript:;">右按钮</a>
+        </div>
+    </div>
+
+    <div class="luozi">
+        <div class="luozi_img">
+
+        </div>
+    </div>
 </body>
 <script type="text/javascript" src="img/jquery-3.1.1.slim.min.js"></script>
-	<script type="text/javascript">
-	$(function(){
+<script type="text/javascript">
+    $(function() {
+        var step = 0,
+            keydown = 0,
+            step2 = 0;
+        setInterval(function() {
+            if (step > 3) {
+                if (step2 > 2) {
+                    step = 0;
+                    step2 = 0;
+                } else {
+                    $('.luozi_img').css('background-position', '-' + 138 * step2 + 'px -120px')
+                    step2++;
+                }
+            } else {
+                $('.luozi_img').css('background-position', '-' + 138 * step + 'px 0')
+                step++;
+            }
+        }, 180)
+        $(document.body).on('keydown', function(event) {
+            if (event && event.keyCode == 65) {
+                if (keydown < Math.floor(($(window).width() - 200) / 50)) {
+                    keydown++;
+                    $('.luozi_img').css('right', '' + 50 * keydown + 'px')
+                }
+            } else if (event && event.keyCode == 68) {
+                if (keydown > 0) {
+                    keydown--;
+                    $('.luozi_img').css({
+                        right: '' + 50 * keydown + 'px',
 
-		// 思路：当我们点击按钮的时候，需要设置一个增量去rotate
+                    })
+                }
+            }
 
-		var total = 0; // 增量
+        })
 
-		var rightBtn = $('.right_btn'); // 将元素缓存起来 ，不要让他每一次都去查找这个元素
-		var items = $('.items');
-		var leftBtn = $('.left_btn');
-		// 设置一个开关变量
-		var flag = true;
-		rightBtn.click(function(){
-			if(flag){
-				flag = false;
-				// 累加增量
-				total += 90;
-				
-				/*setTimeout(function(){
-					items.eq(0).css('transform','rotateX('+total+'deg)');
-				}, 0)
+        // 思路：当我们点击按钮的时候，需要设置一个增量去rotate
 
-				setTimeout(function(){
-					items.eq(1).css('transform','rotateX('+total+'deg)');
-				}, 200)
+        var total = 0; // 增量
 
-				setTimeout(function(){
-					items.eq(2).css('transform','rotateX('+total+'deg)');
-				}, 400)
+        var rightBtn = $('.right_btn'); // 将元素缓存起来 ，不要让他每一次都去查找这个元素
+        var items = $('.items');
+        var leftBtn = $('.left_btn');
+        // 设置一个开关变量
+        var flag = true;
+        rightBtn.click(function() {
+            if (flag) {
+                flag = false;
+                // 累加增量
+                total += 90;
 
-				setTimeout(function(){
-					items.eq(3).css('transform','rotateX('+total+'deg)');
-				}, 600)*/
+                /*setTimeout(function(){
+                	items.eq(0).css('transform','rotateX('+total+'deg)');
+                }, 0)
 
-				// 通过定时器是实现延迟执行css转变
-				/*items.each(function(index,el){
-					setTimeout(function(){
-						items.eq(index).css('transform','rotateX('+total+'deg)');
-					}, index*200);
-				})*/
+                setTimeout(function(){
+                	items.eq(1).css('transform','rotateX('+total+'deg)');
+                }, 200)
 
-				//通过过渡的延迟属性去实现延迟执行过渡
-				items.each(function(index,el){
-					items.eq(index).css({
-						'transform':'rotateX('+total+'deg)',
-						'transition':'all 1s '+index*200+'ms'
-					});	
-				});
-			}
+                setTimeout(function(){
+                	items.eq(2).css('transform','rotateX('+total+'deg)');
+                }, 400)
 
-		});
+                setTimeout(function(){
+                	items.eq(3).css('transform','rotateX('+total+'deg)');
+                }, 600)*/
 
-		// 由于用户暴力点击 导致过渡执行不完全，会造成不好的体验，所以我们控制
-		// 控制的思路 通过一个开关去控制用户的点击
-		// 最后一个ul过渡完毕之后执行的事件
-		items.last().on('transitionend',function (argument) {
-			flag = true;
-		});
-		leftBtn.click(function(){
-			// 累减增量
-			total -= 90;
-			items.css('transform','rotateX('+total+'deg)');
+                // 通过定时器是实现延迟执行css转变
+                /*items.each(function(index,el){
+                	setTimeout(function(){
+                		items.eq(index).css('transform','rotateX('+total+'deg)');
+                	}, index*200);
+                })*/
 
-		});
-	})
-	</script>
+                //通过过渡的延迟属性去实现延迟执行过渡
+                items.each(function(index, el) {
+                    items.eq(index).css({
+                        'transform': 'rotateX(' + total + 'deg)',
+                        'transition': 'all 1s ' + index * 200 + 'ms'
+                    });
+                });
+            }
+
+        });
+
+        // 由于用户暴力点击 导致过渡执行不完全，会造成不好的体验，所以我们控制
+        // 控制的思路 通过一个开关去控制用户的点击
+        // 最后一个ul过渡完毕之后执行的事件
+        items.last().on('transitionend', function(argument) {
+            flag = true;
+        });
+        leftBtn.click(function() {
+            // 累减增量
+            total -= 90;
+            items.css('transform', 'rotateX(' + total + 'deg)');
+
+        });
+    })
+</script>
+
 </html>
