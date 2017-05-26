@@ -3,6 +3,13 @@
      margin: 0;
      list-style: none;
  }
+ 
+ s,
+ i,
+ em {
+     font-style: normal;
+     text-decoration: none;
+ }
  /*page1*/
  
  .setPage1 {
@@ -477,7 +484,7 @@
      transform: translateX(-50%) translateY(-20%);
      width: 800px;
      height: 450px;
-     background-color: pink;
+     /*background-color: pink;*/
  }
  
  .content_left button {
@@ -500,6 +507,7 @@
  .content_right {
      margin-left: 200px;
      height: 100%;
+     color: gold;
  }
  
  .content_right div {
@@ -507,6 +515,64 @@
      height: 100%;
      float: right;
      display: none;
+ }
+ 
+ .content_right i {
+     text-shadow: 3px 1px 3px gold;
+ }
+ 
+ .tag4>ul,
+ .tag3>ul,
+ .tag2>ul,
+ .tag1>ul {
+     margin-left: 60px;
+     /*padding-top: 20px;*/
+ }
+ 
+ .tag4>ul>li,
+ .tag3>ul>li,
+ .tag2>ul>li,
+ .tag1>ul>li {
+     margin-top: 30px;
+ }
+ 
+ .tag4>ul span,
+ .tag3>ul span,
+ .tag2>ul span,
+ .tag1>ul span {
+     display: inline-block;
+     width: 100px;
+     height: 50px;
+     line-height: 50px;
+     border: 2px dashed hotpink;
+     font-size: 18px;
+     text-align: center;
+     vertical-align: middle;
+ }
+ 
+ .tag2>ul i,
+ .tag1>ul i {
+     display: inline-block;
+     font-size: 18px;
+     padding-left: 50px;
+ }
+ 
+ .tag2>ul .eval_self,
+ .tag1>ul .eval_self {
+     height: 50px;
+     vertical-align: top;
+     line-height: 20px;
+     width: 390px;
+     padding-left: 0px;
+ }
+ 
+ .tag4>ul .eval_self,
+ .tag3>ul .eval_self {
+     display: inline-block;
+     height: 200px;
+     vertical-align: top;
+     line-height: 20px;
+     width: 390px;
  }
  
  @media (max-width: 1300px) {
