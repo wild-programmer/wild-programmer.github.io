@@ -21,7 +21,7 @@
  
  @keyframes bodyback {
      0% {
-         background-color: #847942;
+         background-color: white;
      }
      90% {
          background-color: #1d1d1b;
@@ -270,6 +270,7 @@
      top: 0;
      perspective: 1px;
      perspective-origin: 50% 50%;
+     z-index: 9999;
  }
  
  .luozi_img {
@@ -296,6 +297,7 @@
  
  .setPage2 {
      position: relative;
+     background: url('../img/back001.png') 100% no-repeat;
  }
  
  .setPage2_img {
@@ -322,6 +324,52 @@
  
  .stars {
      overflow: hidden
+ }
+ 
+ .shanX2 {
+     display: block;
+     position: absolute;
+     left: 60%;
+     top: 280px;
+     width: 600px;
+     height: 150px;
+     background: url('../img/star2.png') 0 0 no-repeat;
+     background-size: 100%;
+ }
+ 
+ .shanXscale {
+     display: block;
+     position: absolute;
+     left: 60%;
+     top: 50px;
+     width: 100px;
+     height: 100px;
+     background: url('../img/shan5.png') 0 0 no-repeat;
+     background-size: 100%;
+     transform: scale(1) translate(-50%, -50%) rotate(0deg);
+     animation: 1s shanXscale 1s linear infinite alternate;
+ }
+ 
+ .shanXscale2 {
+     display: block;
+     position: absolute;
+     left: 70%;
+     top: 400px;
+     width: 50px;
+     height: 50px;
+     background: url('../img/shan5.png') 0 0 no-repeat;
+     background-size: 100%;
+     transform: scale(1) translate(-50%, -50%) rotate(0deg);
+     animation: 1s shanXscale 1s linear infinite alternate;
+ }
+ 
+ @keyframes shanXscale {
+     0% {
+         transform: scale(1) translate(-50%, -50%) rotate(0deg);
+     }
+     100% {
+         transform: translate(-50%, -50%) rotate(360deg) scale(1.5);
+     }
  }
  
  .BeiDouX {
@@ -457,7 +505,7 @@
      content: '';
      width: 20px;
      height: 26px;
-     background-color: white;
+     background-color: #bfbe92;
      border-radius: 10px;
      position: absolute;
      right: 96px;
@@ -507,7 +555,8 @@
  .content_right {
      margin-left: 200px;
      height: 100%;
-     color: gold;
+     color: #1b1919;
+     font-weight: 500;
  }
  
  .content_right div {
@@ -518,7 +567,8 @@
  }
  
  .content_right i {
-     text-shadow: 3px 1px 3px gold;
+     text-shadow: -2px 2px 3px gold;
+     font-weight: 600;
  }
  
  .tag4>ul,
@@ -548,6 +598,8 @@
      font-size: 18px;
      text-align: center;
      vertical-align: middle;
+     background-color: #f0e37f;
+     border-radius: 2px;
  }
  
  .tag2>ul i,
@@ -564,6 +616,7 @@
      line-height: 20px;
      width: 390px;
      padding-left: 0px;
+     padding-left: 10px;
  }
  
  .tag4>ul .eval_self,
@@ -573,6 +626,7 @@
      vertical-align: top;
      line-height: 20px;
      width: 390px;
+     padding-left: 10px;
  }
  
  @media (max-width: 1300px) {
