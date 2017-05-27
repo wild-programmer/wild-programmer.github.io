@@ -550,7 +550,7 @@
  
  .son2 {
      /*background: url(../img/musict.jpg) 0 0 no-repeat;*/
-     background-color: pink;
+     background-color: #dcbdc2;
      transform-origin: 0 0;
      transition: all 1s;
  }
