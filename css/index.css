@@ -577,7 +577,7 @@
      display: block;
      width: 50px;
      height: 25px;
-     background-color: #617394;
+     background-color: rgba(97, 115, 148, .4);
      position: relative;
      font-size: 12px;
      text-shadow: -3px 2px 3px white;
@@ -597,7 +597,7 @@
      top: -18px;
      border-right: 25px solid transparent;
      border-left: 25px solid transparent;
-     border-bottom: 18px solid #617394;
+     border-bottom: 18px solid rgba(97, 115, 148, .4);
  }
  
  .content_left .page_btn::after {
@@ -608,7 +608,7 @@
      top: 25px;
      border-right: 25px solid transparent;
      border-left: 25px solid transparent;
-     border-top: 18px solid #617394;
+     border-top: 18px solid rgba(97, 115, 148, .4);
  }
  
  .content_left {
