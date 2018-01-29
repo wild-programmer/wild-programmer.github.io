@@ -428,8 +428,10 @@
      left: 30%;
      top: 50px;
      border-radius: 100%;
-     background-color: rgba(254, 241, 105, .6);
-     box-shadow: 0px 0px 20px 7px rgba(254, 241, 105, .7);
+/*      background-color: rgba(254, 241, 105, .6);
+     box-shadow: 0px 0px 20px 7px rgba(254, 241, 105, .7); */
+     background-color: rgb(162, 162, 96);
+     box-shadow: 0px 0px 20px 7px rgb(154, 156, 91);
      animation: 1s shanxing 100ms linear infinite alternate;
      z-index: 1111;
  }
@@ -453,7 +455,9 @@
      left: 40%;
      top: 50px;
      border-radius: 100%;
-     background-color: rgba(255, 255, 185, .7);
+/*      background-color: rgba(255, 255, 185, .7);
+     box-shadow: 0px 0px 20px 7px rgba(255, 255, 185, .7); */
+     background-color: rgb(173, 182, 153);
      box-shadow: 0px 0px 20px 7px rgba(255, 255, 185, .7);
      animation: shanxing2 2s linear infinite alternate;
  }
